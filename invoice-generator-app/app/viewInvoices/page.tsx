@@ -7,11 +7,13 @@ import { useState } from "react";
 export default function viewInvoicesPage() {
 	const [invoiceNumber, setInvoiceNumber] = useState("");
 
+	const NEXT_PUBLIC_BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
 	const GetInvoiceAndPdf = async () => {
 		try {
 			console.log(invoiceNumber);
 			const response = await axios.post(
-				"http://localhost:4000/invoice/getInvoiceAndPdf",
+				`http://${NEXT_PUBLIC_BACKEND_URL}/invoice/getInvoiceAndPdf`,
 				{ invoiceNumber: invoiceNumber },
 				{
 					responseType: "blob",

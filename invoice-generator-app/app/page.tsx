@@ -10,6 +10,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { itemListAtom } from "./recoil/atoms/itemList";
 
 const InvoiceForm = () => {
+	const NEXT_PUBLIC_BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 	// Logo
 	const [logoImageFile, setlogoImageFile] = useState({});
 	const [logoImage, setlogoImage] = useState("");
@@ -103,7 +104,7 @@ const InvoiceForm = () => {
 
 		try {
 			const response = await axios.post(
-				"http://localhost:4000/invoice/create",
+				`http://${NEXT_PUBLIC_BACKEND_URL}/invoice/create`,
 				data
 			);
 			console.log(response.data);
@@ -130,7 +131,7 @@ const InvoiceForm = () => {
 
 							axios
 								.post(
-									"http://localhost:4000/uploadCompanyLogo",
+									`http://${NEXT_PUBLIC_BACKEND_URL}/uploadCompanyLogo`,
 									formData,
 									{
 										headers: {
@@ -519,7 +520,7 @@ const InvoiceForm = () => {
 					title="Signature Image"
 				>
 					<form
-						// action="http://localhost:4000/uploadSignature"
+						// action="http://${NEXT_PUBLIC_BACKEND_URL}/uploadSignature"
 						// method="post"
 						// encType="multipart/form-data"
 						// target="null"
@@ -532,7 +533,7 @@ const InvoiceForm = () => {
 
 							axios
 								.post(
-									"http://localhost:4000/uploadSignature",
+									`http://${NEXT_PUBLIC_BACKEND_URL}/uploadSignature`,
 									formData,
 									{
 										headers: {
