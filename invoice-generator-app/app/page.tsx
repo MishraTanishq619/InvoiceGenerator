@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { Input } from "@nextui-org/input";
-import { Accordion, AccordionItem } from "@nextui-org/accordion";
-import { Button } from "@nextui-org/button";
+import { Input } from "@heroui/input";
+import { Accordion, AccordionItem } from "@heroui/accordion";
+import { Button } from "@heroui/button";
 import axios from "axios";
-import { DateInput } from "@nextui-org/date-input";
+import { DateInput } from "@heroui/date-input";
 import ItemsTable from "@/components/ItemsTable";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { itemListAtom } from "./recoil/atoms/itemList";

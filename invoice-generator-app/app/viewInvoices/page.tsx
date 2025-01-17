@@ -1,6 +1,6 @@
 "use client";
 import { title } from "@/components/primitives";
-import { Input } from "@nextui-org/input";
+import { Input } from "@heroui/input";
 import axios from "axios";
 import { useState } from "react";
 
@@ -51,21 +51,34 @@ export default function viewInvoicesPage() {
 				<Input
 					type="text"
 					isRequired
-					// label="Invoice Number"
-					// labelPlacement={"outside-left"}
 					value={invoiceNumber}
-					onChange={(e) => setInvoiceNumber(e.target.value)}
+					onChange={(e) =>
+						setInvoiceNumber(e.target.value.toUpperCase())
+					}
+					onKeyDown={(e) => {
+						if (e.key === "Enter") {
+							GetInvoiceAndPdf();
+						}
+					}}
 					className="w-96 m-4"
 				/>
 			</div>
 			<div>
 				<button
 					onClick={GetInvoiceAndPdf}
-					type="button"
+					type="submit"
 					className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
 				>
 					Get Invoice
 				</button>
+			</div>
+			<div className="mt-20">
+				<h4>
+					For <b>Demo Invoices</b>, Enter any of These :
+				</h4>
+				<p className="text-xl text-nowrap mt-5">
+					"INV100" | "INV007" | "INV111" | "INV123"
+				</p>
 			</div>
 		</div>
 	);

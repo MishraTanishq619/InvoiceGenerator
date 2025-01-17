@@ -7,10 +7,10 @@ import {
 	TableRow,
 	TableCell,
 	getKeyValue,
-} from "@nextui-org/table";
-import { User } from "@nextui-org/user";
-import { Chip } from "@nextui-org/chip";
-import { Tooltip } from "@nextui-org/tooltip";
+} from "@heroui/table";
+import { User } from "@heroui/user";
+import { Chip } from "@heroui/chip";
+import { Tooltip } from "@heroui/tooltip";
 
 const EditIcon = (props) => (
 	<svg
@@ -319,7 +319,7 @@ import {
 	Checkbox,
 	Input,
 	Link,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { ItemListLengthAtom, itemListAtom } from "@/app/recoil/atoms/itemList";
 
