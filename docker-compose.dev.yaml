@@ -9,8 +9,8 @@ services:
             target: development
         ports:
             - "3000:3000"
-        volumes:
-            - ./invoice-generator-app:/app
+        # volumes:
+        #     - ./invoice-generator-app:/app
 
     invoice_backend_server:
         container_name: Invoice_Backend_Server

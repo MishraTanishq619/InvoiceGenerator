@@ -57,7 +57,17 @@ Navigate to the project directory:
 cd InvoiceGenerator
 ```
 
-## Step 3: Start the Project with Docker Compose
+## Step 3: Add .env File
+
+Create a `.env` file in the `/invoice-generator-app` directory with the necessary environment variables:
+
+```bash
+touch invoice-generator-app/.env
+```
+
+Add the required environment variables to the `.env` file.
+
+## Step 4: Start the Project with Docker Compose
 
 Run the following command to start the project using Docker Compose:
 
@@ -65,7 +75,7 @@ Run the following command to start the project using Docker Compose:
 docker-compose -f docker-compose.dev.yaml up
 ```
 
-## Step 4: Access the Application
+## Step 5: Access the Application
 
 Once the containers are up and running, you can access the application in your web browser:
 
